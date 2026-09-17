@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas | HFC Reservas</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo-favicon.svg">
+    <link rel="stylesheet" href="CSS/citas.css">
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="nav-row">
+                <div class="brand"><span class="brand-hf">HF</span><span class="brand-c">C</span> <span>Reservas</span></div>
+                <div class="header-actions">
+                    <button class="ai-label" type="button" aria-label="Mi cuenta">
+                        <span>Mi cuenta</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="global-nav" aria-label="Navegación general">
+        <a class="global-link" href="Index.html">Inicio</a>
+        <div class="nav-item">
+            <a class="nav-summary" href="vuelos.html" aria-expanded="false">Vuelos</a>
+            <div class="submenu">
+                <a href="vuelos.html#buscar">Buscar vuelos</a>
+                <a href="vuelos.html#tarifas">Tarifas</a>
+                <a href="vuelos.html#destinos">Destinos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-summary" href="eventos.html" aria-expanded="false">Eventos</a>
+            <div class="submenu">
+                <a href="eventos.html#proximos">Próximos</a>
+                <a href="eventos.html#entradas">Entradas</a>
+                <a href="eventos.html#promociones">Promociones</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-summary" href="hoteles.html" aria-expanded="false">Hoteles</a>
+            <div class="submenu">
+                <a href="hoteles.html#hoteles">Hoteles</a>
+                <a href="hoteles.html#restaurantes">Restaurantes</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-summary" href="citas.html" aria-expanded="false">Citas</a>
+            <div class="submenu">
+                <a href="citas.html#agendar">Agendar</a>
+                <a href="citas.html#mis-citas">Mis citas</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-summary" href="lugaresturisticos.html" aria-expanded="false">Turismo</a>
+            <div class="submenu">
+                <a href="lugaresturisticos.html#destinos">Todos</a>
+                <a href="lugaresturisticos.html?tipo=playa#destinos">Playas</a>
+                <a href="lugaresturisticos.html?tipo=volcan#destinos">Volcanes</a>
+                <a href="lugaresturisticos.html?tipo=naturaleza#destinos">Naturaleza</a>
+                <a href="lugaresturisticos.html?tipo=cultura#destinos">Cultura</a>
+            </div>
+        </div>
+        <!-- Ayuda eliminado por petición -->
+    </nav>
+
+    <main class="citas-page">
+        <p align="justify"><span style="font-size:1rem;">Con (nombre) puedes agendar citas medicas ya sea para una revision simple, o solicitar algun tipo de examen o solicitar alguna consulta ya sea presencial o virtual, servicios accesibles monetariamente para tu economia.</span></p>
+        <p align="justify"><span style="font-size:1rem;">(nombre) te garantiza una gran experiencia, una gran atención al cliente y una atencion medica impecable, nuestros servicios siempre buscara tu salud, no tardes en agendar tu servicio requerido</span></p>
+        <p align="justify">¡Tu salud es primordial y nuestra prioridad como servicio medico!</p>
+        <div class="image-wrap">
+            <img class="doctor-img" src="images/DocThor.jpg" alt="Doctor con estetoscopio - HFC Reservas">
+        </div>
+        <hr>
+        <div class="form-panel">
+            <p class="section-title">Consulta medica</p>
+
+            <form name="formCita" method="POST" action="procesar_cita.php">
+                <fieldset>
+                    <legend>Agendar Cita Medica</legend>
+                    <p>
+                        <label for="nombre">Nombre:</label><br>
+                        <input type="text" id="nombre" name="nombre" required size="30">
+                    </p>
+                    <p>
+                        <label for="correo">Correo Electronico:</label><br>
+                        <input type="email" id="correo" name="correo" required size="40">
+                    </p>
+                    <p>
+                        <label for="telefono">Numero de Telefono:</label><br>
+                        <input type="tel" id="telefono" name="telefono" required size="40">
+                    </p>
+                    <p>
+                        <label for="cedula">Numero de Cedula:</label><br>
+                        <input type="text" id="cedula" name="cedula" required size="40">
+                    </p>
+                    <p>
+                        <label for="fecha">Fecha de la Cita:</label><br>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </p>
+                    <p>
+                        <label for="hora">Hora de la Cita:</label><br>
+                        <input type="time" id="hora" name="hora" required>
+                    </p>
+                    <p>
+                        <label>Tipo de Consulta:</label><br>
+                        <input type="radio" id="revision" name="tipoconsulta" value="Revision Simple" required> <label for="revision">Revision Simple</label><br>
+                        <input type="radio" id="examen" name="tipoconsulta" value="Solicitar Examen"> <label for="examen">Solicitar Examen</label><br>
+                        <input type="radio" id="consulta" name="tipoconsulta" value="Consulta General"> <label for="consulta">Consulta General</label>
+                    </p>
+                    <p>
+                        <label>Modalidad de Consulta:</label><br>
+                        <input type="radio" id="presencial" name="modalidad" value="Presencial" required> <label for="presencial">Presencial</label><br>
+                        <input type="radio" id="virtual" name="modalidad" value="Virtual"> <label for="virtual">Virtual</label>
+                    </p>
+                    <p>
+                        <label for="especialidad">Especialidad Medica:</label><br>
+                        <select id="especialidad" name="especialidad" required>
+                            <option value="">-- Seleccionar Especialidad --</option>
+                            <option value="Medicina General">Solicitar Medicamento</option>
+                            <option value="Cardiologia">Cardiologia</option>
+                            <option value="Odontologia">Odontologia</option>
+                            <option value="Neurologia">Neurologia</option>
+                            <option value="Psicologia">Psicologia</option>
+                            <option value="Pediatria">Pediatria</option>
+                            <option value="Lectura de resulados de examenes">Lectura de resulados de examenes</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="descripcion">Descripcion de Sintomas o Motivo de la Cita:</label><br>
+                        <textarea id="descripcion" name="descripcion" rows="5" cols="50" required></textarea>
+                    </p>
+                    <p>
+                        <label for="seguro">Tipo de Seguro:</label><br>
+                        <select id="seguro" name="seguro" required>
+                            <option value="">-- Seleccionar Seguro --</option>
+                            <option value="Seguro Privado">Seguro Privado</option>
+                            <option value="Seguro Publico">Seguro Publico</option>
+                            <option value="Sin Seguro">Sin Seguro</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </p>
+                    <p>
+                        <input type="submit" value="Agendar Cita">
+                        <input type="reset" value="Limpiar Formulario">
+                    </p>
+                </fieldset>
+            </form>
+
+            <hr>
+            <p class="section-title">Solicitar Examen</p>
+
+            <form name="formExamen" method="POST" action="procesar_examen.php">
+                <fieldset>
+                    <legend>Solicitud de Examen Medico</legend>
+                    <p>
+                        <label for="nombreExamen">Nombre Completo:</label><br>
+                        <input type="text" id="nombreExamen" name="nombreExamen" required size="40">
+                    </p>
+                    <p>
+                        <label for="correoExamen">Correo Electronico:</label><br>
+                        <input type="email" id="correoExamen" name="correoExamen" required size="40">
+                    </p>
+                    <p>
+                        <label for="telefonoExamen">Numero de Telefono:</label><br>
+                        <input type="tel" id="telefonoExamen" name="telefonoExamen" required size="40">
+                    </p>
+                    <p>
+                        <label for="cedulaExamen">Numero de Cedula:</label><br>
+                        <input type="text" id="cedulaExamen" name="cedulaExamen" required size="40">
+                    </p>
+                    <p>
+                        <label for="tipoExamen">Tipo de Examen Solicitado:</label><br>
+                        <select id="tipoExamen" name="tipoExamen" required>
+                            <option value="">-- Seleccionar Examen --</option>
+                            <option value="Analisis de Sangre">Analisis de Sangre</option>
+                            <option value="Rayos X">Rayos X</option>
+                            <option value="Ecografia">Ecografia</option>
+                            <option value="Resonancia Magnetica">Resonancia Magnetica</option>
+                            <option value="Tomografia">Tomografia</option>
+                            <option value="Endoscopia">Endoscopia</option>
+                            <option value="Colonoscopia">Colonoscopia</option>
+                            <option value="orina y popo">orina y popo</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="fechaExamen">Fecha Preferida para el Examen:</label><br>
+                        <input type="date" id="fechaExamen" name="fechaExamen" required>
+                    </p>
+                    <p>
+                        <label for="horaExamen">Hora Preferida:</label><br>
+                        <input type="time" id="horaExamen" name="horaExamen" required>
+                    </p>
+                    <p>
+                        <label for="doctorSolicitante">Doctor Solicitante (Opcional):</label><br>
+                        <input type="text" id="doctorSolicitante" name="doctorSolicitante" size="40">
+                    </p>
+                    <p>
+                        <label for="motivoExamen">Motivo o Indicacion Medica:</label><br>
+                        <textarea id="motivoExamen" name="motivoExamen" rows="4" cols="50" required></textarea>
+                    </p>
+                    <p>
+                        <label for="antecedentes">Antecedentes Medicos Relevantes:</label><br>
+                        <textarea id="antecedentes" name="antecedentes" rows="4" cols="50"></textarea>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="terminosExamen" name="terminosExamen" required>
+                        <label for="terminosExamen">Acepto los terminos y condiciones para solicitud de examen</label>
+                    </p>
+                    <p>
+                        <input type="submit" value="Solicitar Examen">
+                        <input type="reset" value="Limpiar Formulario">
+                    </p>
+                </fieldset>
+            </form>
+
+            <fieldset>
+                <legend>Consultar Historial de Citas</legend>
+                <form name="formHistorial" method="POST" action="consultar_historial.php">
+                    <p>
+                        <label for="cedulaHistorial">Ingrese su Numero de Cedula:</label><br>
+                        <input type="text" id="cedulaHistorial" name="cedulaHistorial" required size="40">
+                    </p>
+                    <p>
+                        <label for="correoHistorial">Ingrese su Correo Electronico:</label><br>
+                        <input type="email" id="correoHistorial" name="correoHistorial" required size="40">
+                    </p>
+                    <p>
+                        <input type="submit" value="Consultar Historial">
+                        <input type="reset" value="Limpiar Formulario">
+                    </p>
+                </form>
+            </fieldset>
+        </div>
+        <hr>
+        <p class="contact-title">Contactanos</p>
+        <p class="contact-info">
+            <strong>Telefono:</strong> <span>+503 6720-4373</span><br>
+            <strong>Correo:</strong> <span>prueba@gmail.com</span><br>
+            <strong>Horario de Atencion:</strong> <span>Lunes a Viernes 8:00 AM - 6:00 PM | Sabados 9:00 AM - 2:00 PM</span><br>
+            <strong>Direccion:</strong> <span>enfrente de metro sur</span>
+        </p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">HFC Reservas</div>
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Productos</h4>
+                    <a href="vuelos.html">Vuelos</a>
+                    <a href="hoteles.html">Hoteles</a>
+                    <a href="eventos.html">Eventos</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <a href="información.html">Sobre nosotros</a>
+                    <a href="citas.html">Citas</a>
+                    <a href="#">Carreras</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Soporte</h4>
+                    <a href="#ayuda">Ayuda</a>
+                    <a href="#contacto">Contacto</a>
+                    <a href="#terminos">Términos</a>
+                </div>
+            </div>
+            <div class="footer-actions">
+                <div class="footer-cta">
+                    <a href="login.html" class="btn ghost">Login</a>
+                    <a href="signup.html" class="btn primary">Crear cuenta</a>
+                </div>
+                <div class="footer-social" aria-label="Redes sociales">
+                    <a class="facebook" href="#" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07c0 5 3.66 9.13 8.44 9.93v-7.03H8.08v-2.9h2.36V9.41c0-2.33 1.38-3.61 3.5-3.61.99 0 2.03.18 2.03.18v2.23h-1.14c-1.12 0-1.47.7-1.47 1.42v1.7h2.5l-.4 2.9h-2.1v7.03C18.34 21.2 22 17.08 22 12.07z"/></svg></a>
+                    <a class="instagram" href="#" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.2A4.8 4.8 0 1016.8 13 4.8 4.8 0 0012 8.2zm6.4-2.3a1.1 1.1 0 11-1.1-1.1 1.1 1.1 0 011.1 1.1zM12 10.9A1.1 1.1 0 1113.1 12 1.1 1.1 0 0112 10.9z"/></svg></a>
+                    <a class="whatsapp" href="#" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.79 11.79 0 0012 .2 11.7 11.7 0 002.4 9.34c0 2.06.54 3.95 1.48 5.65L.5 23.5l8.86-3.14a11.5 11.5 0 004.64 1.02h.02c6.51 0 11.9-5.3 11.9-11.82 0-3.17-1.24-6.15-3.4-8.56zM12 20.2h-.01a9.2 9.2 0 01-4.7-1.3l-.33-.2-5.26 1.86 1.78-4.08-.22-.36A9.2 9.2 0 013 9.34 8.99 8.99 0 1112 20.2zM17.3 14.3c-.26-.13-1.56-.76-1.8-.85-.24-.09-.41-.13-.58.13-.18.26-.7.85-.86 1.02-.16.18-.32.2-.58.07-.26-.13-1.1-.4-2.1-1.3-.78-.7-1.3-1.56-1.45-1.82-.15-.26-.02-.4.11-.53.11-.11.26-.29.39-.43.13-.13.18-.22.26-.36.09-.13.04-.25-.02-.36-.07-.11-.58-1.4-.8-1.92-.21-.5-.43-.43-.58-.44l-.5-.01c-.18 0-.46.07-.7.34;- .24.26-.9.88-.9 2.13 0 1.24.92 2.45 1.05 2.62.13.18 1.8 2.8 4.37 3.92 3.06 1.4 3.06.93 3.62.87.58-.07 1.88-.76 2.14-1.5.26-.74.26-1.37.18-1.5-.07-.13-.24-.18-.5-.31z"/></svg></a>
+                </div>
+            </div>
+            <p class="copyright">© 2026 HFC Reservas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="JS/index.js"></script>
+    <script src="JS/citas.js" defer></script>
+</body>
+</html>

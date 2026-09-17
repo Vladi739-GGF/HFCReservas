@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Próximos Eventos en El Salvador</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo-favicon.svg">
+    <link rel="stylesheet" href="CSS/eventos.css">
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="nav-row">
+                <div class="brand"><span class="brand-hf">HF</span><span class="brand-c">C</span> <span>Reservas</span></div>
+                <div class="header-actions">
+                    <button class="ai-label" type="button" aria-label="Mi cuenta">
+                        <span>Mi cuenta</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <header class="events-hero">
+        <div class="events-hero-inner">
+            <h1>Agenda de Eventos El Salvador</h1>
+            <p>Encuentra tus conciertos, festivales y eventos deportivos favoritos</p>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar por artista, evento o lugar...">
+            </div>
+        </div>
+    </header>
+
+    <nav class="global-nav" aria-label="Navegación general">
+        <a class="global-link" href="Index.html">Inicio</a>
+
+        <div class="nav-item">
+            <a class="nav-summary" href="vuelos.html" aria-expanded="false">Vuelos</a>
+            <div class="submenu">
+                <a href="vuelos.html#buscar">Buscar vuelos</a>
+                <a href="vuelos.html#tarifas">Tarifas</a>
+                <a href="vuelos.html#destinos">Destinos</a>
+            </div>
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-summary" href="eventos.html" aria-expanded="false">Eventos</a>
+            <div class="submenu">
+                <a href="#conciertos">Conciertos</a>
+                <a href="#culturales">Festivales</a>
+                <a href="#deportes">Deportes</a>
+            </div>
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-summary" href="hoteles.html" aria-expanded="false">Hoteles</a>
+            <div class="submenu">
+                <a href="hoteles.html#hoteles">Hoteles</a>
+                <a href="hoteles.html#restaurantes">Restaurantes</a>
+            </div>
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-summary" href="citas.html" aria-expanded="false">Citas</a>
+            <div class="submenu">
+                <a href="citas.html#agendar">Agendar</a>
+                <a href="citas.html#mis-citas">Mis citas</a>
+            </div>
+        </div>
+
+        <div class="nav-item">
+            <a class="nav-summary" href="lugaresturisticos.html" aria-expanded="false">Turismo</a>
+            <div class="submenu">
+                <a href="lugaresturisticos.html#destinos">Todos</a>
+                <a href="lugaresturisticos.html?tipo=playa#destinos">Playas</a>
+                <a href="lugaresturisticos.html?tipo=volcan#destinos">Volcanes</a>
+                <a href="lugaresturisticos.html?tipo=naturaleza#destinos">Naturaleza</a>
+                <a href="lugaresturisticos.html?tipo=cultura#destinos">Cultura</a>
+            </div>
+        </div>
+
+        <!-- Ayuda eliminado por petición -->
+    </nav>
+
+    <main class="events-main">
+        <h2 id="conciertos" class="category-title">Conciertos &amp; Música</h2>
+        <div class="events-grid">
+            <div class="event-card">
+                <img src="images_eventos/Alvaro_Diaz.jpg" alt="Concierto Álvaro Díaz">
+                <div class="event-info">
+                    <div class="event-date">12 de Septiembre</div>
+                    <h3 class="event-title">Álvaro Díaz - Sayonara Tour</h3>
+                    <p class="event-place">📍 Complejo Cuscatlán, San Salvador</p>
+                    <div class="price-list">
+                        <div class="price-item"><span class="tier">General</span><span class="val">$35.00</span></div>
+                        <div class="price-item"><span class="tier">General Plus</span><span class="val">$60.00</span></div>
+                        <div class="price-item"><span class="tier">VIP</span><span class="val">$95.00</span></div>
+                    </div>
+                    <button type="button" class="btn-tickets" data-event-name="Álvaro Díaz" data-tiers="General - $35, General Plus - $60, VIP - $95">Reservar Entradas</button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images_eventos/Humbe.jpg" alt="Concierto Humbe">
+                <div class="event-info">
+                    <div class="event-date">16 de Octubre</div>
+                    <h3 class="event-title">Humbe - Esencia Tour</h3>
+                    <p class="event-place">📍 Parque de Pelota Maya, San Salvador</p>
+                    <div class="price-list">
+                        <div class="price-item"><span class="tier">General</span><span class="val">$30.00</span></div>
+                        <div class="price-item"><span class="tier">General Plus</span><span class="val">$55.00</span></div>
+                        <div class="price-item"><span class="tier">VIP</span><span class="val">$85.00</span></div>
+                    </div>
+                    <button type="button" class="btn-tickets" data-event-name="Humbe" data-tiers="General - $30, General Plus - $55, VIP - $85">Reservar Entradas</button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images_eventos/Manuel%20Medrano.jpg" alt="Manuel Medrano">
+                <div class="event-info">
+                    <div class="event-date">18 de Octubre</div>
+                    <h3 class="event-title">Manuel Medrano en Concierto</h3>
+                    <p class="event-place">📍 Be Sport, Nuevo Cuscatlán</p>
+                    <div class="price-list">
+                        <div class="price-item"><span class="tier">General</span><span class="val">$40.00</span></div>
+                        <div class="price-item"><span class="tier">General Plus</span><span class="val">$70.00</span></div>
+                        <div class="price-item"><span class="tier">VIP</span><span class="val">$110.00</span></div>
+                    </div>
+                    <button type="button" class="btn-tickets" data-event-name="Manuel Medrano" data-tiers="General - $40, General Plus - $70, VIP - $110">Reservar Entradas</button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images_eventos/Karol_G.jpg" alt="Karol G en El Salvador">
+                <div class="event-info">
+                    <div class="event-date">25 de Octubre</div>
+                    <h3 class="event-title">Karol G - Bichota Tour</h3>
+                    <p class="event-place">📍 Estadio Nacional Jorge "Mágico" González</p>
+                    <div class="price-list">
+                        <div class="price-item"><span class="tier">Platea</span><span class="val">$55.00</span></div>
+                        <div class="price-item"><span class="tier">Preferencia</span><span class="val">$80.00</span></div>
+                        <div class="price-item"><span class="tier">VIP</span><span class="val">$125.00</span></div>
+                    </div>
+                    <button type="button" class="btn-tickets" data-event-name="Karol G" data-tiers="Platea - $55, Preferencia - $80, VIP - $125">Reservar Entradas</button>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="culturales" class="category-title">Festivales Culturales</h2>
+        <div class="events-grid">
+            <div class="event-card">
+                <img src="images_eventos/festival_de_los_farolitos.jpg" alt="Farolitos">
+                <div class="event-info">
+                    <div class="event-date">7 de Septiembre</div>
+                    <h3 class="event-title">Festival de los Farolitos</h3>
+                    <p class="event-place">📍 Concepción de Ataco, Ahuachapán</p>
+                    <div class="price-list">
+                        <div class="price-item"><span class="tier">Entrada General</span><span class="val">Gratis</span></div>
+                        <div class="price-item"><span class="tier">Tour Guiado VIP</span><span class="val">$15.00</span></div>
+                    </div>
+                    <button type="button" class="btn-tickets" data-event-name="Festival de Farolitos" data-tiers="Entrada General - Gratis, Tour Guiado VIP - $15">Reservar / Información</button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images_eventos/festival_del_jocote.jpg" alt="Jocotes con miel">
+                <div class="event-info">
+                    <div class="event-date">12 de Septiembre</div>
+                    <h3 class="event-title">Festival del Jocote Corona</h3>
+                    <p class="event-place">📍 Parque Nacional Cerro Verde</p>
+                    <div class="price-list">
+                        <div class="price-item"><span class="tier">Entrada Parque</span><span class="val">$2.00</span></div>
+                        <div class="price-item"><span class="tier">Pase VIP + Muestra</span><span class="val">$10.00</span></div>
+                    </div>
+                    <button type="button" class="btn-tickets" data-event-name="Festival del Jocote" data-tiers="Entrada Parque - $2, Pase VIP + Muestra - $10">Reservar / Información</button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images_eventos/Festival_del_añil.jpg" alt="Artesanía de Añil">
+                <div class="event-info">
+                    <div class="event-date">26-27 de Septiembre</div>
+                    <h3 class="event-title">VIII Festival del Añil</h3>
+                    <p class="event-place">📍 Plaza Central, Suchitoto</p>
+                    <div class="price-list">
+                        <div class="price-item"><span class="tier">Acceso Libre</span><span class="val">Gratis</span></div>
+                        <div class="price-item"><span class="tier">Taller de Teñido VIP</span><span class="val">$12.00</span></div>
+                    </div>
+                    <button type="button" class="btn-tickets" data-event-name="Festival del Añil" data-tiers="Acceso Libre - Gratis, Taller de Teñido VIP - $12">Reservar / Información</button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images_eventos/Festival_nacional_de_Las_pupusas.jpg" alt="Festival de pupusas">
+                <div class="event-info">
+                    <div class="event-date">5 de Octubre</div>
+                    <h3 class="event-title">Festival Nacional de Pupusas</h3>
+                    <p class="event-place">📍 El Paseo del Río, San Miguel</p>
+                    <div class="price-list">
+                        <div class="price-item"><span class="tier">Entrada General</span><span class="val">$3.00</span></div>
+                        <div class="price-item"><span class="tier">Muestra Gourmet</span><span class="val">$15.00</span></div>
+                    </div>
+                    <button type="button" class="btn-tickets" data-event-name="Festival de Pupusas" data-tiers="Entrada General - $3, Muestra Gourmet - $15">Reservar / Información</button>
+                </div>
+            </div>
+        </div>
+
+        <h2 id="deportes" class="category-title">Eventos Deportivos</h2>
+        <div class="events-grid">
+            <div class="event-card">
+                <img src="images_eventos/ISA.jpg" alt="Surf City">
+                <div class="event-info">
+                    <div class="event-date">4-13 de Septiembre</div>
+                    <h3 class="event-title">ISA World Surfing Championship</h3>
+                    <p class="event-place">📍 El Sunzal, La Libertad</p>
+                    <div class="price-list">
+                        <div class="price-item"><span class="tier">General (Playa)</span><span class="val">Gratis</span></div>
+                        <div class="price-item"><span class="tier">VIP Deck Fanzone</span><span class="val">$25.00</span></div>
+                    </div>
+                    <button type="button" class="btn-tickets" data-event-name="ISA Surfing Championship" data-tiers="General (Playa) - Gratis, VIP Deck Fanzone - $25">Reservar Entradas</button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images_eventos/El_salvador_vs_honduras.jpg" alt="Partido de fútbol">
+                <div class="event-info">
+                    <div class="event-date">21 de Septiembre</div>
+                    <h3 class="event-title">El Salvador vs. Honduras</h3>
+                    <p class="event-place">📍 Estadio Nacional, San Salvador</p>
+                    <div class="price-list">
+                        <div class="price-item"><span class="tier">Tribuna General</span><span class="val">$18.00</span></div>
+                        <div class="price-item"><span class="tier">Preferencia</span><span class="val">$35.00</span></div>
+                        <div class="price-item"><span class="tier">VIP</span><span class="val">$70.00</span></div>
+                    </div>
+                    <button type="button" class="btn-tickets" data-event-name="El Salvador vs. Honduras" data-tiers="Tribuna General - $18, Preferencia - $35, VIP - $70">Reservar Entradas</button>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <img src="images_eventos/Ruta_de_la_costa_challenge.jpg" alt="Ciclo event">
+                <div class="event-info">
+                    <div class="event-date">28 de Septiembre</div>
+                    <h3 class="event-title">Ruta de la Costa Challenge</h3>
+                    <p class="event-place">📍 Costas de La Libertad</p>
+                    <div class="price-list">
+                        <div class="price-item"><span class="tier">Inscripción General</span><span class="val">$12.00</span></div>
+                        <div class="price-item"><span class="tier">Pase Premium</span><span class="val">$28.00</span></div>
+                    </div>
+                    <button type="button" class="btn-tickets" data-event-name="Ruta de la Costa Challenge" data-tiers="Inscripción General - $12, Pase Premium - $28">Reservar Entradas</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal" aria-label="Cerrar modal">&times;</span>
+            <h3 id="modalTitle" style="margin-bottom: 15px;">Reservar Entradas</h3>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="fullName">Nombre Completo</label>
+                    <input id="fullName" type="text" required placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico</label>
+                    <input id="email" type="email" required placeholder="ejemplo@correo.com">
+                </div>
+                <div class="form-group">
+                    <label for="ticketTier">Selecciona tu Localidad / Tipo de Entrada</label>
+                    <select id="ticketTier" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Cantidad de Boletos</label>
+                    <input id="quantity" type="number" min="1" max="10" value="1" required>
+                </div>
+                <button type="submit" class="btn-tickets">Confirmar Reserva</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">HFC Reservas</div>
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Productos</h4>
+                    <a href="vuelos.html">Vuelos</a>
+                    <a href="hoteles.html">Hoteles</a>
+                    <a href="eventos.html">Eventos</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <a href="información.html">Sobre nosotros</a>
+                    <a href="citas.html">Citas</a>
+                    <a href="#">Carreras</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Soporte</h4>
+                    <a href="#ayuda">Ayuda</a>
+                    <a href="#contacto">Contacto</a>
+                    <a href="#terminos">Términos</a>
+                </div>
+            </div>
+            <div class="footer-actions">
+                <div class="footer-cta">
+                    <a href="login.html" class="btn ghost">Login</a>
+                    <a href="signup.html" class="btn primary">Crear cuenta</a>
+                </div>
+                <div class="footer-social" aria-label="Redes sociales">
+                    <a class="facebook" href="#" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07c0 5 3.66 9.13 8.44 9.93v-7.03H8.08v-2.9h2.36V9.41c0-2.33 1.38-3.61 3.5-3.61.99 0 2.03.18 2.03.18v2.23h-1.14c-1.12 0-1.47.7-1.47 1.42v1.7h2.5l-.4 2.9h-2.1v7.03C18.34 21.2 22 17.08 22 12.07z"/></svg></a>
+                    <a class="instagram" href="#" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.2A4.8 4.8 0 1016.8 13 4.8 4.8 0 0012 8.2zm6.4-2.3a1.1 1.1 0 11-1.1-1.1 1.1 1.1 0 011.1 1.1zM12 10.9A1.1 1.1 0 1113.1 12 1.1 1.1 0 0112 10.9z"/></svg></a>
+                    <a class="whatsapp" href="#" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.79 11.79 0 0012 .2 11.7 11.7 0 002.4 9.34c0 2.06.54 3.95 1.48 5.65L.5 23.5l8.86-3.14a11.5 11.5 0 004.64 1.02h.02c6.51 0 11.9-5.3 11.9-11.82 0-3.17-1.24-6.15-3.4-8.56zM12 20.2h-.01a9.2 9.2 0 01-4.7-1.3l-.33-.2-5.26 1.86 1.78-4.08-.22-.36A9.2 9.2 0 013 9.34 8.99 8.99 0 1112 20.2zM17.3 14.3c-.26-.13-1.56-.76-1.8-.85-.24-.09-.41-.13-.58.13-.18.26-.7.85-.86 1.02-.16.18-.32.2-.58.07-.26-.13-1.1-.4-2.1-1.3-.78-.7-1.3-1.56-1.45-1.82-.15-.26-.02-.4.11-.53.11-.11.26-.29.39-.43.13-.13.18-.22.26-.36.09-.13.04-.25-.02-.36-.07-.11-.58-1.4-.8-1.92-.21-.5-.43-.43-.58-.44l-.5-.01c-.18 0-.46.07-.7.34-.24.26-.9.88-.9 2.13 0 1.24.92 2.45 1.05 2.62.13.18 1.8 2.8 4.37 3.92 3.06 1.4 3.06.93 3.62.87.58-.07 1.88-.76 2.14-1.5.26-.74.26-1.37.18-1.5-.07-.13-.24-.18-.5-.31z"/></svg></a>
+                </div>
+                <p class="copyright">© 2026 HFC Reservas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="JS/index.js"></script>
+    <script src="JS/eventos.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles | Reserva Fácil</title>
+    <link rel="icon" type="image/svg+xml" href="images/logo-favicon.svg">
+    <link rel="stylesheet" href="CSS/hoteles.css">
+</head>
+<body>
+    <header>
+        <div class="nav">
+            <div class="nav-row">
+                <div class="brand"><span class="brand-hf">HF</span><span class="brand-c">C</span> <span>Reservas</span></div>
+                <div class="header-actions">
+                    <button class="ai-label" type="button" aria-label="Mi cuenta">
+                        <span>Mi cuenta</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="global-nav" aria-label="Navegación general">
+        <a class="global-link" href="Index.html">Inicio</a>
+        <div class="nav-item">
+            <a class="nav-summary" href="vuelos.html" aria-expanded="false">Vuelos</a>
+            <div class="submenu">
+                <a href="#buscar">Buscar vuelos</a>
+                <a href="#tarifas">Tarifas</a>
+                <a href="#destinos">Destinos</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-summary" href="eventos.html" aria-expanded="false">Eventos</a>
+            <div class="submenu">
+                <a href="#proximos">Próximos</a>
+                <a href="#entradas">Entradas</a>
+                <a href="#promociones">Promociones</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-summary" href="hoteles.html" aria-expanded="false">Hoteles</a>
+            <div class="submenu">
+                <a href="hoteles.html#hoteles">Hoteles</a>
+                <a href="hoteles.html#restaurantes">Restaurantes</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-summary" href="citas.html" aria-expanded="false">Citas</a>
+            <div class="submenu">
+                <a href="citas.html#agendar">Agendar</a>
+                <a href="citas.html#mis-citas">Mis citas</a>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a class="nav-summary" href="lugaresturisticos.html" aria-expanded="false">Turismo</a>
+            <div class="submenu">
+                <a href="lugaresturisticos.html#destinos">Todos</a>
+                <a href="lugaresturisticos.html?tipo=playa#destinos">Playas</a>
+                <a href="lugaresturisticos.html?tipo=volcan#destinos">Volcanes</a>
+                <a href="lugaresturisticos.html?tipo=naturaleza#destinos">Naturaleza</a>
+                <a href="lugaresturisticos.html?tipo=cultura#destinos">Cultura</a>
+            </div>
+        </div>
+        <!-- Ayuda eliminado por petición -->
+    </nav>
+
+    <script src="JS/index.js"></script>
+    <script src="JS/hoteles.js" defer></script>
+
+    <div class="view-switcher" aria-label="Alternar entre hoteles y restaurantes">
+        <button type="button" class="view-btn active" data-view="hoteles">Hoteles</button>
+        <button type="button" class="view-btn" data-view="restaurantes">Restaurantes</button>
+    </div>
+
+    <main id="hotelsView" class="view-panel active">
+        <section class="hotel-page">
+            <section class="hotel-hero">
+                <div class="hotel-hero-copy">
+                    <p class="eyebrow">Hospedaje premium</p>
+                    <h1>Encuentra el hotel ideal para tu próxima escapada</h1>
+                    <p>Descubre opciones en San Salvador y destinos turísticos con servicios modernos, ubicaciones estratégicas y reservas rápidas.</p>
+                </div>
+                <div class="hotel-hero-badge">
+                    <span>3,200+</span>
+                    <small>habitaciones confirmadas</small>
+                </div>
+            </section>
+
+            <section class="hotel-filters" aria-label="Opciones de hotel">
+                <button type="button" class="filter-btn active" data-filter="all">Todos</button>
+                <button type="button" class="filter-btn" data-filter="playas">Playas</button>
+                <button type="button" class="filter-btn" data-filter="ciudad">Ciudad</button>
+                <button type="button" class="filter-btn" data-filter="familia">Familia</button>
+                <button type="button" class="filter-btn" data-filter="spa">Spa</button>
+            </section>
+
+            <section class="hotel-grid" id="hotelGrid" aria-label="Listado de hoteles"></section>
+        </section>
+    </main>
+
+    <section id="restaurantsView" class="view-panel" aria-label="Listado de restaurantes">
+        <div class="restaurant-page">
+            <div class="restaurant-hero">
+                <div>
+                    <p class="eyebrow">Gastronomía local</p>
+                    <h1>Descubre sabores inolvidables en El Salvador</h1>
+                </div>
+            </div>
+
+            <div class="restaurant-grid" id="restaurantGrid"></div>
+        </div>
+    </section>
+
+    <div class="booking-modal" id="bookingModal" aria-hidden="true">
+        <div class="booking-modal-content">
+            <button type="button" class="modal-close" aria-label="Cerrar">×</button>
+            <p class="modal-kicker">Confirmación rápida</p>
+            <h3 id="modalHotelTitle">Reservar hotel</h3>
+            <form id="bookingForm">
+                <div class="field">
+                    <label for="guestName">Nombre completo</label>
+                    <input id="guestName" type="text" placeholder="Tu nombre" required>
+                </div>
+                <div class="field-row">
+                    <div class="field">
+                        <label for="checkin">Check-in</label>
+                        <input id="checkin" type="date" required>
+                    </div>
+                    <div class="field">
+                        <label for="checkout">Check-out</label>
+                        <input id="checkout" type="date" required>
+                    </div>
+                </div>
+                <div class="field-row">
+                    <div class="field">
+                        <label for="guests">Huéspedes</label>
+                        <select id="guests">
+                            <option>2 huéspedes</option>
+                            <option>3 huéspedes</option>
+                            <option>4 huéspedes</option>
+                            <option>5 huéspedes</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="roomType">Habitación</label>
+                        <select id="roomType">
+                            <option>Estándar</option>
+                            <option>Superior</option>
+                            <option>Deluxe</option>
+                            <option>Suite</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Confirmar reserva</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">HFC Reservas</div>
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4>Productos</h4>
+                    <a href="vuelos.html">Vuelos</a>
+                    <a href="hoteles.html">Hoteles</a>
+                    <a href="eventos.html">Eventos</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Compañía</h4>
+                    <a href="información.html">Sobre nosotros</a>
+                    <a href="citas.html">Citas</a>
+                    <a href="#">Carreras</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Soporte</h4>
+                    <a href="#ayuda">Ayuda</a>
+                    <a href="#contacto">Contacto</a>
+                    <a href="#terminos">Términos</a>
+                </div>
+            </div>
+            <div class="footer-actions">
+                <div class="footer-cta">
+                    <a href="login.html" class="btn ghost">Login</a>
+                    <a href="signup.html" class="btn primary">Crear cuenta</a>
+                </div>
+                <div class="footer-social" aria-label="Redes sociales">
+                    <a class="facebook" href="#" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.07C22 6.51 17.52 2 12 2S2 6.51 2 12.07c0 5 3.66 9.13 8.44 9.93v-7.03H8.08v-2.9h2.36V9.41c0-2.33 1.38-3.61 3.5-3.61.99 0 2.03.18 2.03.18v2.23h-1.14c-1.12 0-1.47.7-1.47 1.42v1.7h2.5l-.4 2.9h-2.1v7.03C18.34 21.2 22 17.08 22 12.07z"/></svg></a>
+                    <a class="instagram" href="#" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.2A4.8 4.8 0 1016.8 13 4.8 4.8 0 0012 8.2zm6.4-2.3a1.1 1.1 0 11-1.1-1.1 1.1 1.1 0 011.1 1.1zM12 10.9A1.1 1.1 0 1113.1 12 1.1 1.1 0 0112 10.9z"/></svg></a>
+                    <a class="whatsapp" href="#" aria-label="WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.79 11.79 0 0012 .2 11.7 11.7 0 002.4 9.34c0 2.06.54 3.95 1.48 5.65L.5 23.5l8.86-3.14a11.5 11.5 0 004.64 1.02h.02c6.51 0 11.9-5.3 11.9-11.82 0-3.17-1.24-6.15-3.4-8.56zM12 20.2h-.01a9.2 9.2 0 01-4.7-1.3l-.33-.2-5.26 1.86 1.78-4.08-.22-.36A9.2 9.2 0 013 9.34 8.99 8.99 0 1112 20.2zM17.3 14.3c-.26-.13-1.56-.76-1.8-.85-.24-.09-.41-.13-.58.13-.18.26-.7.85-.86 1.02-.16.18-.32.2-.58.07-.26-.13-1.1-.4-2.1-1.3-.78-.7-1.3-1.56-1.45-1.82-.15-.26-.02-.4.11-.53.11-.11.26-.29.39-.43.13-.13.18-.22.26-.36.09-.13.04-.25-.02-.36-.07-.11-.58-1.4-.8-1.92-.21-.5-.43-.43-.58-.44l-.5-.01c-.18 0-.46.07-.7.34-.24.26-.9.88-.9 2.13 0 1.24.92 2.45 1.05 2.62.13.18 1.8 2.8 4.37 3.92 3.06 1.4 3.06.93 3.62.87.58-.07 1.88-.76 2.14-1.5.26-.74.26-1.37.18-1.5-.07-.13-.24-.18-.5-.31z"/></svg></a>
+                </div>
+            </div>
+            <p class="copyright">© 2026 HFC Reservas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
